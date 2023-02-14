@@ -1,0 +1,458 @@
+<html lang="en" style="overscroll-behavior: none; scroll-behavior: auto;"><head>
+
+  <meta charset="UTF-8">
+  
+  
+  <title>Prathamesh Parit</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Signika+Negative:wght@400;600&display=swap");
+
+header, footer, #smooth-content {
+  visibility: hidden;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+body {
+  position: relative;
+  overflow-x: hidden;
+  background-color: #161616;
+  font-family: "Signika Negative", sans-serif;
+  color: white;
+}
+
+header {
+  box-sizing: border-box;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  width: 100%;
+  z-index: 3;
+  height: 7em;
+  font-size: clamp(0.66rem, 2vw, 1rem);
+  letter-spacing: 0.2em;
+}
+
+.heading {
+  position: fixed;
+  margin: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  text-align: center;
+  font-weight: 600;
+  opacity: 0;
+}
+
+.heading h1 {
+  font-size: 12vw;
+}
+
+#container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  height: 100vh;
+  will-change: transform;
+}
+
+.section {
+  position: relative;
+  width: 50vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transform: perspective(400px);
+  transform-style: preserve-3d;
+   max-width: 500px;
+}
+
+.hide {
+  overflow: hidden;
+  margin-top: 1.2rem;
+}
+
+h1, h2 {
+  margin: 0;
+}
+
+h1 > *, h2 > * {
+  will-change: transform;
+}
+
+h2 {
+  font-size: clamp(0.66rem, 3vw, 2.5rem);
+  margin: 0;
+}
+
+p {
+  margin-top: 0.5rem;
+  opacity: 0.4;
+}
+
+.section--lg, .end {
+  min-width: 100vw;
+}
+
+.card {
+  width: 80%;
+  z-index: 999;
+}
+
+.card img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+
+.section:nth-child(2n) {
+  margin-top: -10vh;
+}
+
+.section:nth-child(3n) {
+  margin-top: 30vh;
+}
+
+.noise {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.2;
+}
+
+img {
+  border-radius: 10px;
+}
+
+footer {
+  position: fixed;
+  bottom: 1rem;
+  text-align: center;
+  width: 100%;
+  font-size: clamp(0.66rem, 2vw, 1rem);
+  letter-spacing: 0.2em;
+  font-weight: 100;
+}
+
+.green {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: #28a92b;
+  z-index: 999;
+  opacity: 0;
+  will-change: transform;
+}
+
+.end {
+  margin: 0!important;
+}
+
+.end h2 {
+  font-size: 5vw;
+}
+</style>
+  
+<header>
+  <div>Prathamesh Parit</div>
+</header>
+<div class="hide heading">
+  <h1>MY PROJECTS</h1>
+</div>
+
+<div id="smooth-content">
+  <section id="container">
+    <div class="section section--lg">
+    </div>
+  </section>
+</div>
+<footer>
+  <p>scroll to explore....</p>
+</footer>
+<div class="green"></div>
+
+
+</footer>
+
+
+
+
+<script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="https://assets.codepen.io/16327/ScrollSmoother.min.js"></script>
+  <script src="https://assets.codepen.io/16327/SplitText3.min.js"></script>
+  
+
+
+      <script id="rendered-js">
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
+
+const cont = document.querySelector("#container");
+const pens = [
+{
+  title: "AI Face Biometry",
+  author: "Trained using siamese networks and socket IO to obtain frames. The database was hosted on Firebase and the model was deployed using Flask framework.",
+  url: "https://github.com/prathameshparit/Face-Biometry",
+  img: "assets/img/1.jpg" },
+
+{
+  title: "QR Code Attendance System",
+  author: "Automated attendance system using QR codes and student ID cards to mark attendance in Firebase database.",
+  url: "https://github.com/prathameshparit/QRCode-Attendence-System",
+  img: "assets/img/3.jpg" },
+
+{
+  title: "Multi Disease Prediction",
+  author: "Utilized regression and classification algorithms to predict over 50 diseases, and it was deployed using Flask.",
+  url: "https://github.com/prathameshparit/Multi-Disease-Prediction",
+  img: "assets/img/2.jpg" },
+
+{
+  title: "AI Surveillance System",
+  author: "AI Surveillance System provides enhanced security and safety in public spaces through the use of advanced machine learning and deep learning techniques.",
+  url: "https://github.com/prathameshparit/AI-Surveillance-System",
+  img: "assets/img/4.jpg" },
+
+{
+  title: "Happiness Upliftment",
+  author: "Based on the data collected and analyzed, our machine learning models provide recommendations for improving the user's happiness index.",
+  url: "https://github.com/prathameshparit/Happiness-Upliftment",
+  img: "assets/img/5.jpg" },
+
+{
+  title: "Potato Disease Prediction",
+  author: "Uses machine learning techniques to analyze images of potato plants and predict the likelihood of various diseases based on their visual characteristics.",
+  url: "https://github.com/prathameshparit/Potato-Disease-Prediction",
+  img: "assets/img/6.jpg" },
+
+{
+  title: "Nike Web Scraper",
+  author: "Allows users to easily and efficiently scrape data from the Nike website, including product information and prices.",
+  url: "https://github.com/prathameshparit/Nike-Web-Scraper",
+  img: "assets/img/7.jpg" },
+
+{
+  title: "Lesion Detection",
+  author: "Lesion detection using computer vision, with a accompanying full-fledged website integrated using Flask Framework",
+  url: "https://github.com/prathameshparit/Lesion-Detection",
+  img: "assets/img/8.jpg" },
+
+{
+  title: "Data Visualization PowerBI",
+  author: "The project includes a Power BI dashboard that allows the seller to filter and drill down into the data, compare different products and brands, and see the impact of different pricing and discount strategies on sales and revenue.",
+  url: "https://github.com/prathameshparit/Data-Visualization-PowerBi",
+  img: "assets/img/9.jpg" },
+
+{
+  title: "Conversational AI-Bot",
+  author: "The project involves using GPT-2, a transformer-based language model, to create a conversational AI system for answering product-related FAQs, leveraging Azure services for deployment and integration.",
+  url: "https://github.com/prathameshparit/Conversational-AI-Bot-Azure",
+  img: "assets/img/10.jpg" },
+
+
+{
+  title: "Cataract Prediction",
+  author: "This project aims to predict the onset of cataracts using machine learning techniques on ocular imaging and demographic data.",
+  url: "https://github.com/prathameshparit/Cataract-Prediction",
+  img: "assets/img/11.jpg" },
+
+{
+  title: "Movie Analytics",
+  author: "A web-based platform for movie booking and analysis, offering a seamless experience for users and admin. Includes interactive analytics charts and ideal offer prediction using regression algorithms.",
+  url: "https://github.com/prathameshparit/Movie-Analytics",
+  img: "assets/img/12.png" },
+
+{
+  title: "Lung Cancer Prediction",
+  author: "A deep learning model for early lung cancer detection using feature extraction, compared with conventional models, and implemented an automatic notification system.",
+  url: "https://github.com/prathameshparit/Lung-Cancer-Prediction",
+  img: "assets/img/13.png" }];
+
+
+const shuffledPens = gsap.utils.shuffle(pens);
+shuffledPens.forEach((pen, i) => {
+  let cardHTML = `
+  
+  <div class="section">
+     <a href="${pen.url}" target="_blank" class="card">
+      <img src=${pen.img} alt="">
+      </a>
+      <div class="hide">
+        <h2>${pen.title}</h2>
+      </div>
+      <p>${pen.author}</p>
+  </div> 
+  
+  `;
+  if (i == pens.length - 1) {
+    cardHTML = `
+    <div class="section">
+       <a href="${pen.url}" target="_blank" class="card">
+      <img src=${pen.img} alt="">
+      </a>
+      <div class="hide">
+        <h2>${pen.title}</h2>
+      </div>
+      <p>${pen.author}</p>
+  </div> 
+   <div class="section end">
+   <div class="hide">
+      <h2>Explore more at my <a href="https://github.com/prathameshparit?tab=repositories">@Github</a>....</h2>
+   </div>
+   </div>`;
+  }
+
+  cont.insertAdjacentHTML("beforeend", cardHTML);
+});
+
+// create the scrollSmoother before your scrollTriggers
+const smoother = ScrollSmoother.create({
+  smooth: 1.5 });
+
+smoother.paused(true);
+
+let splitHeading = new SplitText(".heading h1", { type: "chars" });
+let chars = splitHeading.chars;
+
+gsap.set(".green", { opacity: 1, scaleX: 0, scaleY: 0.005 });
+gsap.set(".heading", { opacity: 0.1, transformOrigin: "center" });
+
+let intro = gsap.timeline({
+  onComplete: () => {
+    smoother.paused(false);
+    gsap.set(".heading", { overflow: "visible" });
+  } });
+
+
+intro.
+to(".green", {
+  scaleX: 1,
+  ease: "expo.out",
+  transformOrigin: "center center" }).
+
+to(".green", {
+  scaleY: 1,
+  duration: 0.8,
+  ease: "expo.out",
+  transformOrigin: "center center" }).
+
+set("header, footer, #smooth-content", { autoAlpha: 1 }).
+to(".green", {
+  scaleY: 0,
+  ease: "sine.out",
+  transformOrigin: "top center" }).
+
+from(chars, {
+  opacity: 0,
+  duration: 0.8,
+  yPercent: 100,
+  ease: "expo.out",
+  stagger: 0.03 });
+
+
+let scrollTween = gsap.to(container, {
+  x: () => -(cont.scrollWidth - document.documentElement.clientWidth) + "px",
+  ease: "none",
+  scrollTrigger: {
+    trigger: cont,
+    invalidateOnRefresh: true,
+    pin: true,
+    scrub: true,
+    end: () => "+=" + cont.offsetWidth * 10 } });
+
+
+
+let sections = gsap.utils.toArray(".section");
+
+gsap.to(chars, {
+  duration: 0.8,
+  yPercent: "random(-300, 300)",
+  xPercent: "random(-300, 300)",
+  rotate: "random(-360, 360)",
+  ease: "expo.out",
+  stagger: 0.03,
+  immediateRender: false,
+  scrollTrigger: {
+    trigger: ".section--lg",
+    start: "left left",
+    scrub: true,
+    end: "right left",
+    containerAnimation: scrollTween } });
+
+
+
+sections.forEach((section, i) => {
+  let card = section.querySelector(".card");
+  let text = section.querySelector("h2");
+  let p = section.querySelector("p");
+
+  let mySplitText = new SplitText(text, { type: "chars" });
+  let chars = mySplitText.chars;
+
+  gsap.set(chars, { yPercent: 120 });
+  gsap.set(card, { z: 0 });
+  gsap.set(p, { opacity: 0 });
+
+  let tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: section,
+      start: "left right",
+      end: "left center",
+      scrub: true,
+      containerAnimation: scrollTween,
+      onLeave: () => {
+        gsap.set(chars, { yPercent: 120, opacity: 1 });
+        gsap.to(chars, {
+          duration: 0.8,
+          yPercent: 0,
+          ease: "expo.out",
+          stagger: 0.03 });
+
+        gsap.to(p, {
+          opacity: 0.6,
+          duration: 0.5,
+          delay: 0.4 });
+
+      },
+      onEnterBack: () => {
+        gsap.to([chars, p], {
+          opacity: 0,
+          duration: 0.33 });
+
+      } } });
+
+
+
+  tl.from(card, {
+    y: `random([-${window.innerHeight * 2}, ${window.innerHeight * 2}])`,
+    rotationX: 360,
+    rotationZ: 360,
+    z: -2000,
+    xPercent: 100,
+    opacity: 0 });
+
+});
+//# sourceimg=pen.js
+    </script>
+
+  
+
+
+
+
+ 
+</body>
+</html>
